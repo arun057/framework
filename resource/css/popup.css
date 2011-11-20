@@ -1,0 +1,210 @@
+.popupContact *{
+    border:0pt none;
+    margin:0pt;
+    padding:0pt;
+    color:#333333;
+    text-align:left;
+}
+
+body{
+    background:#fff none repeat scroll 0%;
+    line-height:1;
+    font-size: 12px;
+    margin:0pt;
+    height:100%;
+}
+
+.FB_popup a{
+    cursor: pointer;
+    text-decoration:none;
+    font-size:12px;
+}
+
+#backgroundPopup{
+    display:none;
+    position:fixed;
+    _position:absolute; /* hack for internet explorer 6*/
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    background:#000000; 
+    z-index:5001;
+}
+
+.FB_popup{
+    background-color:#fff;
+    display:none;
+    position:fixed;
+    _position:absolute; /* hack for internet explorer 6*/
+    width:400px;
+	height:250px;
+    z-index:5002;
+   /* -moz-box-shadow: 0 0 9px 9px #888;
+    -webkit-box-shadow: 0 0 9px 9px #888;
+    box-shadow: 0 0 9px 9px #888;*/
+	border: 15px solid #a4aeba;
+}
+
+.FB_popup h1{ 
+    background:#6D84B4 none repeat scroll 0 0;
+    border-color:#3B5998 #3B5998 -moz-use-text-color;
+    border-style:solid solid none;
+    border-width:1px 1px medium;
+    color:#FFFFFF;
+    font-size:14px;
+    padding:3px;
+    margin:0;
+}
+
+.FB_popup a.FB_popupClose {
+    line-height:14px;
+    right:6px;
+    bottom:15px;
+    position:absolute;
+    display:block;
+	text-transform:uppercase;
+    color:#57a0d3;
+}
+.FB_popup .more{
+	    left:10px;
+    bottom:15px;
+    position:absolute;
+}
+
+.FB_popup .personal{
+    padding: 5px 10px;
+    font-size:12px;
+}
+
+.FB_popup .buttonArea{
+    background:#F2F2F2;
+    border-top:1px solid #CCCCCC;
+    height:34px;
+    margin:0px;
+    position:absolute;
+    bottom:0px;
+    width:100%;
+    padding-top:5px;
+}
+
+.FB_popup .contactArea .text{
+    border:2px solid #cccccc;
+    margin:5px;
+    height:50px;
+    width:95%;
+    padding:0;
+}
+
+.FB_popup .buttonArea .SharingOptions_Text{
+    padding:3px;
+    float:left;
+}
+
+.FB_popup .buttonArea .SharingOptions_Text a{
+    color:#3B5998;
+    font-size:11px;
+}
+
+.FB_popup .Sharer_btns{
+    float:right;
+}
+
+.FB_popup .Sharer_btns .s_btn{
+    cursor: pointer;
+    margin:2px 6px 6px 5px;
+    font-size:13px;
+    background-color:#5B74A8;
+    background-position:0 -48px;
+    border-color:#29447E #29447E #1A356E;
+    color:#FFFFFF;
+    padding:2px 6px;
+    text-align:center;
+    text-decoration:none;
+    vertical-align:middle;
+    white-space:nowrap;
+}
+
+.FB_popup .Sharer_btns .c_btn{
+    margin:2px 6px 6px 5px;
+    border-color:#999999 #999999 #888888;
+    border-style:solid;
+    border-width:1px;
+    color:#333333;
+    cursor:pointer;
+    display:inline-block;
+    font-size:11px;
+    font-weight:bold;
+    padding:2px 6px;
+    text-align:center;
+    text-decoration:none;
+    vertical-align:middle;
+    white-space:nowrap;
+}
+
+.FB_popup input {
+    border: 1px solid gray;
+    font-size: 12px;
+    margin: 20px;
+}
+
+.contactArea img {
+    float: left; 
+    padding: 20px;
+}
+
+.FB_popup .contactArea input {
+    width: 250px;
+    margin: 35px 0;
+    padding: 5px;
+}
+
+#popup_zip {
+    height:240px;
+}
+
+.FB_popup .calendar {
+	background-image: url(/resource/img/cal-bg.jpg);
+	background-repeat: no-repeat;
+	width: 104px;
+	height: 126px;
+	/*margin: -140px auto 0 auto;*/
+	float:right;
+	display: block;
+	color: #41566e;
+	text-align: center;
+}
+
+.FB_popup .calendar .month {
+	display: block;
+	padding-top: 8px;
+	line-height: 41px;
+	font-size: 18px;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: bold;
+}
+
+.FB_popup .calendar .date {
+	height: 40px;
+	line-height: 40px;
+	padding-top: 6px;
+	font-size: 40px;
+	font-weight: bold;
+	display: block;
+}
+
+.FB_popup .calendar .day {
+	font-size: 11px;
+	text-transform: uppercase;
+	font-variant: small-caps;
+	font-weight: bold;
+}
+.FB_popup h2 {
+	font-size: 18px;
+	color: #41566e;
+	font-family: 'MuseoSlab500', Arial, Helvetica, sans-serif;
+	line-height: 24px;
+	padding: 10px 0;
+	text-transform: uppercase;
+}

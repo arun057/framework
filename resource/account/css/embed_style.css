@@ -1,0 +1,74 @@
+.account_module .clear { clear: both }
+.account_module ul { padding-left: 0px }
+.account_module #close { float: right; cursor: pointer; }
+.account_module fieldset { padding: 10px; }
+.account_module { margin: -20px 0 4px 0 !important }
+.account_module .signin_wrap { padding: 10px; background-color: #133308; float: left;}
+.account_module .signup_wrap { padding: 10px; background-color: #133308; float:left; }
+.account_module .signup_wrap .container_12 { background-color: #133308; }
+.account_module .container_12 { padding:5px; }
+.account_module .container_12 p { width: 280px; }
+.account_module .container_12 .form_error { width: 280px; color: orange }
+.popup {z-index: 0; width: 340px;}
+
+.account_module .container_12 { margin-bottom: 0px }
+.account_module .grid_6 { margin-bottom: 0px }
+.account_module .grid_2 { margin-bottom: 0px }
+.account_module .alpha { margin-bottom: 0px }
+.account_module .alpha p { margin-bottom: 0px }
+.account_module fieldset div { margin-bottom: 0px }
+.account_module .prefix_2 { margin-top: 10px }
+.account_module .prefix_2 span { margin-right: 20px; }
+
+.account_module .field_error, account_module .form_error { color:#96000b; display:block; margin-bottom:10px; font-weight:bold; background:#fafaba; padding:3px 10px; -moz-border-radius:5px; -webkit-border-radius:5px; }
+.account_module .form_info { color:#3683bb; display:block; margin-bottom:10px; font-weight:bold; background:#fafaba; padding:3px 10px; -moz-border-radius:5px; -webkit-border-radius:5px; }
+
+.account_module a { color:#55a6d5; font-size: 13px !important; }
+.account_module a:hover { color:#1d72a3; }
+.account_module h2 { color:#102544; border-bottom:1px solid #c9eaf3; }
+.account_module h3 { font-size: 13px; color: inherit; }
+.account_module small { font-size:11px; font-weight:normal; }
+
+.account_module li.third_party { list-style:none; padding:0; margin:0; width:30px; height:20px; float:left; padding:0 10px 10px 0; }
+.account_module li.third_party a { display:block; width:30px; height:30px; font-size:10px; text-align:center; text-decoration:none; color:#333; text-shadow:0px 0px 3px #fff; }
+.account_module li.google { background:url(../img/icon/google.png) no-repeat; }
+.account_module li.microsoft { background:url(../img/icon/microsoft.png) no-repeat; }
+.account_module li.aol { background:url(../img/icon/aol.png) no-repeat; }
+.account_module li.yahoo { background:url(../img/icon/yahoo.png) no-repeat; }
+.account_module li.twitter { background:url(/resource/account/img/tw-connect.png) no-repeat; }
+.account_module li.facebook { background:url(/resource/account/img/fb-connect.png) no-repeat; }
+.account_module li.myspace { background:url(../img/icon/myspace.png) no-repeat; }
+.account_module li.openid { background:url(../img/icon/openid.png) no-repeat; }
+.account_module input.openid { background:#fff url(../img/icon/openid-icon.png) no-repeat left center; border:1px solid #999; padding:6px 6px 6px 36px; font-size:16px; }
+
+.account_module p, .account_module input, .account_module textarea, .account_module select, .account_module button, .account_module #recaptcha_area { margin-bottom:10px; }
+.account_module label { line-height:24px; font-size: 13px; }
+.account_module input { padding:3px 5px; width:240px; }
+.account_module textarea { padding:3px 5px; font-family:Arial, Helvetica, sans-serif; font-size:14px;}
+.account_module select { padding:3px 5px; }
+.account_module select.select { width:254px; height:26px; }
+.account_module input.checkbox { width:auto; }
+
+.account_module .button { font-family:Arial, Helvetica, sans-serif; font-size:12px; background:#f08300; color:#fff; 
+.account_module padding:4px 16px; border:none; text-decoration:none; cursor:pointer; cursor:hand; -moz-border-radius:5px; -webkit-border-radius:5px; }
+.account_module .button:hover { background:#fca500; color:#fff; } 
+.account_module button.button { padding:3px 13px; }
+
+.account_module #header { -moz-border-radius:0 0 5px 5px; -webkit-border-radius:0 0 5px 5px; }
+.account_module #header h1 { padding:0; margin:0; }
+.account_module #header h1 a { text-decoration:none; }
+.account_module #top_menu { padding:0; margin:0; text-align:right; }
+.account_module #top_menu li { display:inline; padding:0 3px; margin:0; }
+
+
+.account_module #main_menu { }
+.account_module #main_menu ul { margin:0; padding:0 20px;}
+.account_module #main_menu ul li { padding-right:10px; margin:0; display:inline; }
+.account_module #main_menu ul li.active { color: white }
+.account_module #content { }
+.account_module #footer { }
+
+.account_module body.account_linked { }
+.account_module body.account_linked .grid_1 img { margin-bottom:15px }
+
+

@@ -1,0 +1,242 @@
+<?php
+
+require_once 'cms_model.php';
+
+//
+// The Cateogry model
+// 
+
+class Categories_model extends CMS_Model {
+    var $id = '';
+    var $parent_id = '';
+    var $cat_order = '';
+    var $name = '';
+    var $slug = '';
+
+    const table_name = 'fs_blog_categories';
+
+    function __construct($id = '') {
+        parent::__construct();        
+        if ($id)
+            $this->get_from_id($id);
+
+        $this->id = $id;
+    }
+
+    // get a list of category or a specific one
+    //
+    function get($parent_id = -1, $id = '') {
+
+        $this->db->select('*');
+        $this->db->from(self::table_name);
+        if ($id)
+                $this->db->where('id', $id);
+
+        $this->db->order_by('parent_id', 'ASC');
+        $this->db->order_by('cat_order', 'ASC');
+        $query = $this->db->get();
+
+        // construct 2 tier nav for 'HEADER' only (-2)
+        $category = array();
+        foreach ($query->result() as $c) {
+            if (isset($category[$c->parent_id]))
+                $category[$c->parent_id][$c->id] = array('-1' => $c);
+            else {
+                if (isset($category[-1][$c->parent_id]))
+                    $category[-1][$c->parent_id][$c->id] = $c;
+                else 
+                    $category[-2][$c->parent_id][$c->id] = $c;
+            }
+        }
+
+        return $category;
+    }
+
+    function get_all_categories() {			
+        // set parent_id and id such that the order by will group parent, then children
+        // grandchildren will be grouped together, but not with parents - have to combine them later
+        $this->db->select('*, if (parent_id = 0, id, parent_id) as parent_id, if (parent_id = 0, 0, id) as id', false) 
+            ->from('fs_blog_categories')
+            ->order_by('parent_id, id');
+        $query = $this->db->get(); 
+        return $query->result();
+    }
+
+    // get all children of specified parents
+    function get_subcats_by_parent_id($parent_ids, $limit = '', $offset = 0, $sort_by ='', $sort_order='') {
+        $where = "parent_id  IN (".$parent_ids.")";
+        $this->db->select('*')
+            ->from('fs_blog_categories')
+            ->where($where);
+        if($limit!=''){
+            $this->db->limit($limit, $offset);
+        }
+        if ($sort_by !='' && $sort_order!=''){
+            $this->db->order_by($sort_by,$sort_order );    
+        }   
+        $query = $this->db->get();
+		
+        return $query->result();
+    }	
+
+    // set up grandparent / parent/ children  for 3 level categories (no more than 3 levels)
+    // find the parent id and construct the parent : child : grandchild : header
+    function find_parents() {
+
+        $all_categories = $this->get_all_categories();
+
+        $parents = array();
+        $headers = array();
+
+        foreach( $all_categories as $category ) {
+
+            // set parents (may have no children)
+            if ($category->id == 0) {
+                $parents[$category->parent_id][0] = $category->name;
+                $headers[$category->parent_id][$category->id] = '';
+                $map[$category->id] = '';
+                continue;
+            }
+
+            // set children (may have no children)
+            if (key_exists($category->parent_id, $parents)) {
+                $parents[$category->parent_id][$category->id][0] = $category->name;
+                $headers[$category->id][$category->parent_id] = $parents[$category->parent_id][0];
+                $map[$category->parent_id] = $parents[$category->parent_id][0];
+                continue;
+            }
+
+            // set any grand children
+            foreach ($parents as $id => $p) {
+                if (key_exists($category->parent_id, $p)) {
+                    $parents[$id][$category->parent_id][$category->id] = $category->name;
+                    $headers[$category->id][$category->parent_id] = $parents[$id][0] . ' -> ' . $parents[$id][$category->parent_id][0];
+                    $map[$category->parent_id] = $parents[$id][0] . ' -> ' . $parents[$id][$category->parent_id][0];
+                }
+            }
+
+        }
+        return array('headers' => $headers, 'map' => $map, 'parents' => $parents);
+    }
+
+    function _update_order($changes) {
+        if (isset($changes['cat_order'])) {
+            $new_order = $changes['cat_order'];
+            if ($new_order == 0) $new_order = 1;
+            $this->db->query( 'update ' . self::table_name . ' fs 
+                    set fs.cat_order = fs.cat_order + 1 
+                    where fs.parent_id = ' . $this->parent_id . 
+                ' and fs.cat_order >= ' . $new_order );					                	
+            return true;
+        }
+        return false;
+    }
+
+    function _reorder() {
+        $this->db->query('set @a = 0');        	
+        $this->db->set('fs.cat_order', 'case when @a then @a := @a + 1 else @a := 1 end', FALSE);
+        $this->db->order_by( 'fs.cat_order', 'asc');
+        $this->db->where('fs.parent_id', $this->parent_id);
+        $this->db->update( self::table_name . ' fs');        	
+    }
+
+    // save this to the database
+    //
+    function save($changes) {
+        $do_reorder = false;
+        if (is_array($changes)) {
+            $do_reorder = $this->_update_order($changes);
+            foreach( $changes as $key => $value ) {
+                if( property_exists( $this, $key ))     			
+                    $this->$key = $value;
+            }
+        }
+        $this->db->where('id', $this->id);
+        $this->db->update(self::table_name, $this);
+
+        if ($do_reorder) 
+            $this->_reorder();
+    }
+
+    // create a new nav in the database
+    //
+    function create($changes) {
+    	foreach( $changes as $key => $value ) {
+            if( property_exists( $this, $key ))      			
+                $this->$key = $value;
+    	}
+
+        $this->cat_order = 999;
+        $this->db->insert(self::table_name, $this);
+
+        $this->id = $this->db->insert_id();
+
+        if ($changes['cat_order']) {
+            $this->_update_order($changes);
+            $this->cat_order = $changes['cat_order'];
+            $this->db->where('id', $this->id);
+            $this->db->update(self::table_name, $this);
+            $this->_reorder();
+        }
+
+        return $this->id;
+    }
+
+    function get_cat_by_id($id) {
+        $where = "id = ".$id;
+        $query = $this->db->select('*')
+            ->from('fs_blog_categories')
+            ->where($where)
+            ->get();
+
+        return $query->result();
+    }	
+   
+    function get_cat_by_name($name) {
+        $where = "name = ".$name;
+        $query = $this->db->select('*')
+            ->from('fs_blog_categories')
+            ->where($where)
+            ->get();
+
+        return $query->result();
+    }   
+
+    // fetch the category from the id
+    //
+    function get_from_id($id) {  
+        $query = $this->db->get_where(self::table_name, array('id' => $id));
+        foreach ($query->result() as $c) 
+            $this->_load_from_query($c);
+
+        return $this;
+    }
+
+    // return total count in this table
+    //
+    function get_num_rows($table_name) {
+        $this->db->select('*')->from($table_name);
+        $query = $this->db->get();
+        return ($this->db->count_all_results($table_name));
+    }
+
+    // delete this category from the database
+    // 
+    function delete() {
+        $this->db->delete(self::table_name, array('id' => $this->id));
+    }
+
+    // create objects from db query results
+    //
+    function _load_from_query($c) {
+    	foreach( $c as $key => $value ) {
+            if( property_exists( $this, $key )) {
+                if( is_array( $this->$key )) {
+                    $value = explode( ',', $value );
+                }
+                $this->$key = $value;
+            }
+    	}
+    }
+}
+
