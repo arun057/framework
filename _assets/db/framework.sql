@@ -45,7 +45,7 @@ CREATE TABLE `a3m_account` (
 
 LOCK TABLES `a3m_account` WRITE;
 /*!40000 ALTER TABLE `a3m_account` DISABLE KEYS */;
-INSERT INTO `a3m_account` VALUES (1,'admin','cindy@fissionstrategy.com','935bda53552e49cd56fc00eea5a6702e','2011-11-02 17:01:07',NULL,'2011-11-20 10:53:19',NULL,NULL,NULL);
+INSERT INTO `a3m_account` VALUES (1,'admin','cindy@fissionstrategy.com','756457dc85f13450b3dfba2cbc1465e5','2011-11-02 17:01:07',NULL,'2011-11-20 11:44:41',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `a3m_account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -182,7 +182,7 @@ CREATE TABLE `ci_session` (
 
 LOCK TABLES `ci_session` WRITE;
 /*!40000 ALTER TABLE `ci_session` DISABLE KEYS */;
-INSERT INTO `ci_session` VALUES ('cd413bdf243ef0f9dc71d0cf91dd202a','192.168.1.2','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.30',1321805650,'a:1:{s:10:\"account_id\";s:1:\"1\";}');
+INSERT INTO `ci_session` VALUES ('bcdae1507adedc2a80169537dff7df25','192.168.1.2','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.30',1321807441,'a:1:{s:10:\"account_id\";s:1:\"1\";}');
 /*!40000 ALTER TABLE `ci_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1212,4 +1212,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2011-11-20 11:30:46
+-- Dump completed on 2011-11-20 11:45:20
