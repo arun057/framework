@@ -1,0 +1,22 @@
+
+This is a very basic website using the CMS framework. 
+
+make sure the .htaccess is in /   as it redirects /xxx/index.php/param to /xxx/param
+
+install db from:
+
+/_assets/db/framework.sql
+
+Edit these config files to your system:
+
+/application/config/config.php
+/application/config/database.php
+
+or, if 'development' mode is set in /index.php, edit these as well:
+
+/application/config/development/config.php
+/application/config/development/database.php
+
+
+
+
