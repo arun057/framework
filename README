@@ -18,5 +18,10 @@ or, if 'development' mode is set in /index.php, edit these as well:
 /application/config/development/database.php
 
 
+to access CMS, you will need to login with an admin account. 
+
+admin / framework
+
+
 
 
