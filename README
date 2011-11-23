@@ -1,4 +1,3 @@
-
 This is a very basic website using the CMS framework. 
 
 make sure the .htaccess is in /   as it redirects /xxx/index.php/param to /xxx/param
@@ -10,7 +9,16 @@ install db from:
 Edit these config files to your system:
 
 /application/config/config.php
+
+           $config['base_url']  = "http://your_dev_domain/";
+           $config['base_dir']     = "/var/www/html/your_dev_dir/";
+
 /application/config/database.php
+
+           $db['default']['hostname'] = "localhost";
+           $db['default']['username'] = "root";
+           $db['default']['password'] = "";
+           $db['default']['database'] = "framework";
 
 or, if 'development' mode is set in /index.php, edit these as well:
 
@@ -20,7 +28,10 @@ or, if 'development' mode is set in /index.php, edit these as well:
 
 to access CMS, you will need to login with an admin account. 
 
-admin / framework
+http://your_dev_domain/cms
+
+u: admin 
+p: framework
 
 
 
