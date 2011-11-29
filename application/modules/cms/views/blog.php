@@ -1,8 +1,3 @@
-<?php 
-
-echo '<div class="breadcrumbs">' . $page_title . '</div>';
-?> 
-
 <?php
 
 $attributes = array('id' => 'my_form', 'name' => 'my_form');

@@ -1,3 +1,4 @@
+		</section>
 		<aside id="sidebar" class="grid_3 pull_9">
 			<?php 					
 			if (isset($sub_nav)) { ?>
@@ -23,10 +24,6 @@
 
 <footer id="bottom">
 	<section class="container_12 clearfix">
-		<div id="footer">
-			<div class="wrapper">
-			</div>
-		</div>
 	</section>
 </footer>
 

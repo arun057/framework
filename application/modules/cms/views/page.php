@@ -1,6 +1,5 @@
 <?php
 
-echo '<div class="breadcrumbs">' . $page_title . '</div>';
 $attributes = array('id' => 'my_form', 'name' => 'my_form');
 
 if ($id)

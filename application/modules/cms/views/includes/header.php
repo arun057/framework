@@ -168,9 +168,13 @@
 		</div>
 		
 		<section id="content"> 
-			<?php
-			function is_current($page_title, $name) {
-				if ($page_title == $name)
-					return " class='current_page_item' ";
-				return '';
-			} ?>
+			<section class="container_12 clearfix">
+				<section id="main" class="grid_9 push_3">
+					<?php
+					function is_current($page_title, $name) {
+						if ($page_title == $name)
+							return " class='current' ";
+						return '';
+					} ?>
+					<article id="<?php echo $page_title; ?>">
+					<h1><?php echo $page_title; ?></h1>
