@@ -26,29 +26,48 @@
 		<link href="/application/modules/cms/3rdparty/JCrop/css/jquery.Jcrop.css?v=<?=$version?>"
 		rel="stylesheet" type="text/css" />
 
+		<!-- things from the theme -->
 
+		<link rel="stylesheet" type="text/css" href="/application/modules/cms/3rdparty/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/application/modules/cms/3rdparty/css/skins/gray.css" title="gray">
+
+		<link rel="alternate stylesheet" type="text/css" href="/application/modules/cms/3rdparty/css/skins/orange.css" title="orange">
+		<link rel="alternate stylesheet" type="text/css" href="/application/modules/cms/3rdparty/css/skins/red.css" title="red">
+		<link rel="alternate stylesheet" type="text/css" href="/application/modules/cms/3rdparty/css/skins/green.css" title="green">
+		<link rel="alternate stylesheet" type="text/css" href="/application/modules/cms/3rdparty/css/skins/purple.css" title="purple">
+		<link rel="alternate stylesheet" type="text/css" href="/application/modules/cms/3rdparty/css/skins/yellow.css" title="yellow">
+		<link rel="alternate stylesheet" type="text/css" href="/application/modules/cms/3rdparty/ss/skins/black.css" title="black">
+		<link rel="alternate stylesheet" type="text/css" href="/application/modules/cms/3rdparty/css/skins/blue.css" title="blue">
+
+		<link rel="stylesheet" type="text/css" href="/application/modules/cms/3rdparty/css/superfish.css">
+		<link rel="stylesheet" type="text/css" href="/application/modules/cms/3rdparty/css/uniform.default.css">
+		<link rel="stylesheet" type="text/css" href="/application/modules/cms/3rdparty/css/jquery.wysiwyg.css">
+		<link rel="stylesheet" type="text/css" href="/application/modules/cms/3rdparty/css/facebox.css">
+		<link rel="stylesheet" type="text/css" href="/application/modules/cms/3rdparty/css/smoothness/jquery-ui-1.8.8.custom.css">
 
 
 
 		<!--[if lte IE 8]>
-		<script type="text/javascript" src="js/html5.js"></script>
-		<script type="text/javascript" src="js/selectivizr.js"></script>
-		<script type="text/javascript" src="js/excanvas.min.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/resource/js/html5.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/resource/js/selectivizr.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/resource/js/excanvas.min.js"></script>
 		<![endif]-->
 
-		<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
-		<script type="text/javascript" src="js/jquery-ui-1.8.8.custom.min.js"></script>
-		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-		<script type="text/javascript" src="js/jquery.uniform.min.js"></script>
-		<script type="text/javascript" src="js/jquery.wysiwyg.js"></script>
-		<script type="text/javascript" src="js/superfish.js"></script>
-		<script type="text/javascript" src="js/cufon-yui.js"></script>
-		<script type="text/javascript" src="js/Delicious_500.font.js"></script>
-		<script type="text/javascript" src="js/jquery.flot.min.js"></script>
-		<script type="text/javascript" src="js/custom.js"></script>
-		<script type="text/javascript" src="js/facebox.js"></script>
-		<script type="text/javascript" src="js/jquery.cookie.js"></script>
-		<script type="text/javascript" src="js/switcher.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/resource/js/jquery-1.4.4.min.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/resource/js/jquery-ui-1.8.8.custom.min.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/resource/js/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/resource/js/jquery.uniform.min.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/resource/js/jquery.wysiwyg.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/resource/js/superfish.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/resource/js/cufon-yui.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/resource/js/Delicious_500.font.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/resource/js/jquery.flot.min.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/resource/js/custom.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/resource/js/facebox.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/resource/js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/resource/js/switcher.js"></script>
+
+		<!-- thats all from the theme folks -->
 
 
 		<script type="text/javascript"
@@ -93,28 +112,47 @@
 				</div>
 			</form>
 		</div>
-		<div id="root" class="wrapper">
-			<header id="top">
-
-				<h1 class="cms_logo">
-					<a href="/"><?php echo $this->config->item('site_name') ?> </a>
-				</h1>
-
-				<div id="sign_in_out">
-					<?php
-					if ($this->authentication->is_signed_in()) {
-						echo '<strong>Welcome ' . $account->username . '&nbsp;&nbsp;</strong>';
-						echo anchor('account/account_settings', 'settings') . ' &bull; ';
-						echo anchor('account/sign_out', 'logout');
-					} else {
-						echo anchor('account/sign_in', 'sign in');
-					}?>
+		<header id="top">
+			<div class="container_12 clearfix">
+				<div id="logo" class="grid_3">
+					<h1 class="cms_logo">
+						<a href="/"><?php echo $this->config->item('site_name') ?> </a>
+					</h1>
 				</div>
 
-				<div id="bar">
+				<div class="grid_4" id="colorstyle">
+					<div>Change Color</div>
+					<a href="#" rel="blue"></a>
+					<a href="#" rel="green"></a>
+					<a href="#" rel="red"></a>
+					<a href="#" rel="purple"></a>
+					<a href="#" rel="orange"></a>
+					<a href="#" rel="yellow"></a>
+					<a href="#" rel="black"></a>
+					<a href="#" rel="gray"></a>
+				</div>
+
+				<div id="userinfo" class="grid_5">
+					<div id="sign_in_out">
+						<?php
+						if ($this->authentication->is_signed_in()) {
+							echo '<strong>Welcome ' . $account->username . '&nbsp;&nbsp;</strong>';
+							echo anchor('account/account_settings', 'settings') . ' &bull; ';
+							echo anchor('account/sign_out', 'logout');
+						} else {
+							echo anchor('account/sign_in', 'sign in');
+						}?>
+					</div>
+				</div>
+			</div>
+		</header>
+			
+		<div id="topmenu">
+			<div class="container_12 clearfix">
+				<div class="grid_12">
 					<?php 
 					if (isset($nav)) { ?>
-						<ul class="nav">
+						<ul id="mainmenu" class="sf-menu">
 							<?php 
 							foreach ($nav as $name => $url) { ?>
 								<li <?php echo is_current($menu_highlight, $name); ?>>
@@ -123,29 +161,16 @@
 								<?php 
 							} ?>
 						</ul>
-						<br/>
-
-						<?php 
-						if (isset($sub_nav)) { ?>
-							<ul class="nav subnav">
-								<?php 
-								foreach ($sub_nav as $name => $url) { ?>
-									<li <?php echo is_current( isset( $sub_menu_highlight ) ? $sub_menu_highlight : '', $name); ?>>
-										<a href="<?= $url ?>"><?= $name ?></a>
-									</li>
-									<?php 
-								} ?>
-							</ul>
-							<?php 
-						} ?>
-						<?php 
+						<?php
 					} ?>
 				</div>
-			</header>
-			<section id="cms_content"> 
-				<?php
-				function is_current($page_title, $name) {
-					if ($page_title == $name)
-						return " class='current_page_item' ";
-					return '';
-				} ?>
+			</div>
+		</div>
+		
+		<section id="content"> 
+			<?php
+			function is_current($page_title, $name) {
+				if ($page_title == $name)
+					return " class='current_page_item' ";
+				return '';
+			} ?>
