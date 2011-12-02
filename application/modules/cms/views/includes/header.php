@@ -147,7 +147,7 @@
 			</div>
 		</header>
 			
-		<div id="topmenu">
+		<nav id="topmenu">
 			<div class="container_12 clearfix">
 				<div class="grid_12">
 					<?php 
@@ -165,7 +165,7 @@
 					} ?>
 				</div>
 			</div>
-		</div>
+		</nav>
 		
 		<section id="content"> 
 			<section class="container_12 clearfix">
