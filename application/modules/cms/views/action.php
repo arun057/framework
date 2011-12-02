@@ -1,3 +1,8 @@
+<section id="content"> 
+      <section class="container_12 clearfix">
+        <section id="main" class="grid_9 push_3">
+          <article id="<?php echo $page_title; ?>">
+          <h1><?php echo $page_title; ?></h1>
 <?php
 if ($id)
     echo form_open_multipart("/cms/actions/edit/$id");

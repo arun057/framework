@@ -1,3 +1,9 @@
+<?php
+function is_current($page_title, $name) {
+	if ($page_title == $name)
+		return " class='current' ";
+	return '';
+} ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -48,24 +54,24 @@
 
 
 		<!--[if lte IE 8]>
-		<script type="text/javascript" src="/application/modules/cms/resource/js/html5.js"></script>
-		<script type="text/javascript" src="/application/modules/cms/resource/js/selectivizr.js"></script>
-		<script type="text/javascript" src="/application/modules/cms/resource/js/excanvas.min.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/3rdparty/js/html5.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/3rdparty/js/selectivizr.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/3rdparty/js/excanvas.min.js"></script>
 		<![endif]-->
 
-		<script type="text/javascript" src="/application/modules/cms/resource/js/jquery-1.4.4.min.js"></script>
-		<script type="text/javascript" src="/application/modules/cms/resource/js/jquery-ui-1.8.8.custom.min.js"></script>
-		<script type="text/javascript" src="/application/modules/cms/resource/js/jquery.validate.min.js"></script>
-		<script type="text/javascript" src="/application/modules/cms/resource/js/jquery.uniform.min.js"></script>
-		<script type="text/javascript" src="/application/modules/cms/resource/js/jquery.wysiwyg.js"></script>
-		<script type="text/javascript" src="/application/modules/cms/resource/js/superfish.js"></script>
-		<script type="text/javascript" src="/application/modules/cms/resource/js/cufon-yui.js"></script>
-		<script type="text/javascript" src="/application/modules/cms/resource/js/Delicious_500.font.js"></script>
-		<script type="text/javascript" src="/application/modules/cms/resource/js/jquery.flot.min.js"></script>
-		<script type="text/javascript" src="/application/modules/cms/resource/js/custom.js"></script>
-		<script type="text/javascript" src="/application/modules/cms/resource/js/facebox.js"></script>
-		<script type="text/javascript" src="/application/modules/cms/resource/js/jquery.cookie.js"></script>
-		<script type="text/javascript" src="/application/modules/cms/resource/js/switcher.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/3rdparty/js/jquery-1.4.4.min.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/3rdparty/js/jquery-ui-1.8.8.custom.min.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/3rdparty/js/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/3rdparty/js/jquery.uniform.min.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/3rdparty/js/jquery.wysiwyg.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/3rdparty/js/superfish.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/3rdparty/js/cufon-yui.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/3rdparty/js/Delicious_500.font.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/3rdparty/js/jquery.flot.min.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/3rdparty/js/custom.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/3rdparty/js/facebox.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/3rdparty/js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="/application/modules/cms/3rdparty/js/switcher.js"></script>
 
 		<!-- thats all from the theme folks -->
 
@@ -166,15 +172,3 @@
 				</div>
 			</div>
 		</nav>
-		
-		<section id="content"> 
-			<section class="container_12 clearfix">
-				<section id="main" class="grid_9 push_3">
-					<?php
-					function is_current($page_title, $name) {
-						if ($page_title == $name)
-							return " class='current' ";
-						return '';
-					} ?>
-					<article id="<?php echo $page_title; ?>">
-					<h1><?php echo $page_title; ?></h1>

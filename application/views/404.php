@@ -1,4 +1,3 @@
-
     <h1>Page not found</h1>
     <div style="float: right; ">
       <img alt="Page Not Found" src="">
