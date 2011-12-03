@@ -158,7 +158,7 @@ form input.submit, form input.submit, .create_button {
 }
 
 #admin_title input {
-    width: 660px;
+    width: 400px;
 }
 
 .sidebar { 
@@ -724,6 +724,7 @@ ul.user_fields_list li input {
     width: 560px;
 }
 
+/*
 .page-images-block {
  float: left; 
  clear:left; 
@@ -732,4 +733,4 @@ ul.user_fields_list li input {
  padding: 20px; 
  background-color: #CCCCCC; 
  border-radius: 4px 4px 4px 4px;
-}
+} */
