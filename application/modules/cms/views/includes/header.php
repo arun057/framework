@@ -172,3 +172,28 @@ function is_current($page_title, $name) {
 				</div>
 			</div>
 		</nav>
+		<section id="content"> 
+	<section class="container_12 clearfix">
+		<aside id="sidebar" class="grid_3">
+			<?php 					
+			if (isset($sub_nav)) { ?>
+				<div class="box menu">
+					<h2>Sub Menu</h2>
+					<section>
+						<ul>
+							<?php 
+							foreach ($sub_nav as $name => $url) { ?>
+								<li <?php echo is_current( isset( $sub_menu_highlight ) ? $sub_menu_highlight : '', $name); ?>>
+									<a href="<?= $url ?>"><?= $name ?></a>
+								</li>
+								<?php 
+							} ?>
+						</ul>
+					</section>
+				</div>
+				<?php 
+			} ?>
+		</aside>
+		<section id="main" class="grid_6">
+			<article class="content">
+				<h1><?php echo $page_title; ?></h1>
