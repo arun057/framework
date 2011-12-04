@@ -25,9 +25,9 @@ function is_current($page_title, $name) {
 
 		<link href="/application/modules/cms/3rdparty/css/flexigrid.css?v=<?=$version?>"
 		rel="stylesheet" type="text/css" />
-		<link rel="stylesheet"
+		<!-- <link rel="stylesheet"
 		href="/application/modules/cms/resource/css/admin.css?v=<?=$version?>"
-		type="text/css" media="screen" />
+		type="text/css" media="screen" /> -->
 
 		<link href="/application/modules/cms/3rdparty/JCrop/css/jquery.Jcrop.css?v=<?=$version?>"
 		rel="stylesheet" type="text/css" />
